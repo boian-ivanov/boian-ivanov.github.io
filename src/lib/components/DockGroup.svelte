@@ -43,9 +43,9 @@
 	};
 </script>
 
-<!-- <aside class="top absolute left-1/2 top-3/4 z-20 -translate-x-1/2 -translate-y-1/2 transform"> -->
-<Dock direction="middle" class="relative" let:mouseX let:distance let:magnification>
-	<!-- {#if navs.navbar.length > 0}
+<aside class="z-10">
+	<Dock direction="middle" class="relative" let:mouseX let:distance let:magnification>
+		<!-- {#if navs.navbar.length > 0}
 		{#each navs.navbar as item}
 			<DockIcon {mouseX} {magnification} {distance}>
 				<Tooltip.Root>
@@ -61,20 +61,20 @@
 			</DockIcon>
 		{/each}
 	{/if} -->
-	<!-- <Separator orientation="vertical" class="h-full w-[0.6px]" /> -->
-	{#each navs.contact as item}
-		<a href={item.href} target="_blank">
-			<DockIcon {mouseX} {magnification} {distance}>
-				<Tooltip.Root>
-					<Tooltip.Trigger class="rounded-full transition-all duration-200 hover:bg-zinc-900/80">
-						<img src={item.icon} alt={item.label} class="m-3 h-5 w-5 text-white invert" />
-					</Tooltip.Trigger>
-					<Tooltip.Content sideOffset={9}>
-						<p>{item.label}</p>
-					</Tooltip.Content>
-				</Tooltip.Root>
-			</DockIcon>
-		</a>
-	{/each}
-</Dock>
-<!-- </aside> -->
+		<!-- <Separator orientation="vertical" class="h-full w-[0.6px]" /> -->
+		{#each navs.contact as item}
+			<a href={item.href} target="_blank">
+				<DockIcon {mouseX} {magnification} {distance}>
+					<Tooltip.Root>
+						<Tooltip.Trigger class="rounded-full transition-all duration-200 hover:bg-zinc-900/80">
+							<img src={item.icon} alt={item.label} class="m-3 h-5 w-5 text-white invert" />
+						</Tooltip.Trigger>
+						<Tooltip.Content sideOffset={9}>
+							<p>{item.label}</p>
+						</Tooltip.Content>
+					</Tooltip.Root>
+				</DockIcon>
+			</a>
+		{/each}
+	</Dock>
+</aside>

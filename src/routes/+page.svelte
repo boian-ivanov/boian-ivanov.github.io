@@ -1,8 +1,21 @@
 <script lang="ts">
-	export const prerender = true
-	import Meteors from '$lib/components/Meteors.svelte';
+	export const prerender = true;
+
+	import Particles from '$lib/components/Particles.svelte';
 	import DockGroup from '$lib/components/DockGroup.svelte';
-	import OrbitingCircles from '$lib/components/OrbitingCircles.svelte';
+
+	export let stream: MediaProvider | null;
+
+	function srcObject(node: HTMLVideoElement, stream: MediaProvider | null) {
+		node.srcObject = stream;
+		return {
+			update(newStream: MediaProvider | null) {
+				if (node.srcObject != newStream) {
+					node.srcObject = newStream;
+				}
+			}
+		};
+	}
 
 	function handlePlay(e: Event) {
 		(e.target as HTMLVideoElement)?.play();
@@ -15,12 +28,13 @@
 	<div class="z-10 gap-4">
 		<video
 			id="portfolio-vid"
-			class="mx-auto"
+			class="mx-auto mb-2"
 			width="150"
-			height="100"
-			preload="auto"
+			height="168"
+			use:srcObject={stream}
 			on:mouseover={handlePlay}
 			on:focus={handlePlay}
+			preload="auto"
 			muted
 			autoplay
 			playsinline
@@ -39,13 +53,5 @@
 		</h1>
 	</div>
 	<DockGroup />
+	<Particles className="absolute inset-0" refresh={true} />
 </main>
-<!-- 
-<style>
-	.me {
-		/* background: -webkit-linear-gradient(right, #0284c7, #f87171); */
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		text-shadow: 0px 0px #00000000;
-	}
-</style> -->
