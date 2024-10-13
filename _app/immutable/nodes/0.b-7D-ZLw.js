@@ -1,1 +1,0 @@
-import{c as n,a as s}from"../chunks/disclose-version.D6qxCtRO.js";import{p,f as m,a as f}from"../chunks/runtime.TlEynDOI.js";import{s as d,b as i}from"../chunks/props.Bp-Ras6f.js";function _(o,r){p(r,!1);const a=!0;var e=n(),t=m(e);return d(t,r,"default",{},null),s(o,e),i(r,"prerender",a),f({prerender:a})}export{_ as component};

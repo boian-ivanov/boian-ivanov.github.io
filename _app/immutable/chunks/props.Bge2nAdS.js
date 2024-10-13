@@ -1,0 +1,1 @@
+import{h as r,b as l,d as u,g as o}from"./runtime.CwkI7WYj.js";function g(e,t,s,i,a){var f;r&&l();var n=(f=t.$$slots)==null?void 0:f[s],d=!1;n===!0&&(n=t.children,d=!0),n===void 0?a!==null&&a(e):n(e,d?()=>i:i)}function h(e,t,s){var i=o(e,t);i&&i.set&&(e[t]=s,u(()=>{e[t]=null}))}export{h as b,g as s};
