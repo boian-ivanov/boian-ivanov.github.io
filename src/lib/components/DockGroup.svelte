@@ -39,7 +39,7 @@
 		contact: [
 			{ label: 'Github', icon: GithubSvg, href: 'https://github.com/boian-ivanov' },
 			{ label: 'LinkedIn', icon: LinkedInSvg, href: 'https://linkedin.com/in/boian-ivanov' },
-			{ label: 'Email', icon: MailSvg, href: 'mail:boian.ivanov44@gmail.com' },
+			{ label: 'Email', icon: MailSvg, href: 'mailto:boian.ivanov44@gmail.com' },
 			{
 				label: 'Resume',
 				icon: FileSvg,

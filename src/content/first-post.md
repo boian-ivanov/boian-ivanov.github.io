@@ -45,4 +45,4 @@ And so, my brand new homepage was born! You can visit it at [boian.dev](https://
 To end on a high note, I want everyone to keep in mind that even though things might not turn out the way you expected initially, they can end up becoming much better than anticipated. So don't be scared to try out new things, because the end result might surprise you 😉
 
 
-You can find the repo to this whole project [here on GitHub](.
+You can find the repo to this whole project [here on GitHub](https://github.com/boian-ivanov/boian.dev/).

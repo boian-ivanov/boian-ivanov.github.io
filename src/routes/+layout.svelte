@@ -1,5 +1,7 @@
 <script>
 	import '../app.css';
+	import { dev } from '$app/environment';
+	import { inject } from '@vercel/analytics';
 	import { onNavigate } from '$app/navigation';
 	import { setupViewTransition } from 'sveltekit-view-transition';
 
@@ -17,6 +19,8 @@
 			});
 		});
 	});
+
+	inject({ mode: dev ? 'development' : 'production' });
 </script>
 
 <slot></slot>
