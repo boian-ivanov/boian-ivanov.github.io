@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Motion, AnimatePresence, useAnimation } from 'svelte-motion';
+	import { Motion, AnimatePresence } from 'svelte-motion';
 	import { inview } from 'svelte-inview';
 	import { id, cn } from '$lib/utils';
 

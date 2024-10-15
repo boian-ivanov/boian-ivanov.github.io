@@ -1,10 +1,12 @@
 import { fontFamily } from "tailwindcss/defaultTheme";
+import typography from '@tailwindcss/typography';
 import type { Config } from "tailwindcss";
 
 const config: Config = {
 	darkMode: ["class"],
 	content: ["./src/**/*.{html,js,svelte,ts}"],
 	safelist: ["dark"],
+	plugins: [typography],
 	theme: {
 		container: {
 			center: true,
@@ -91,7 +93,17 @@ const config: Config = {
 			},
 			fontFamily: {
 				sans: [...fontFamily.sans]
-			}
+			},
+			typography: {
+				white: {
+					css: {
+						color: 'white',
+						'a:hover': {
+							color: 'white'
+						}
+					}
+				}
+			},
 		}
 	},
 };
