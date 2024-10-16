@@ -7,9 +7,31 @@
 	import Title from '$lib/components/Title.svelte';
 	import Video from '$lib/components/Video.svelte';
 	import { formatDate } from '$lib/utils';
+	import { MetaTags } from 'svelte-meta-tags';
 
 	let BLUR_FADE_DELAY = 0.04;
 </script>
+
+<MetaTags
+  title="Blog page"
+  titleTemplate="%s | Boian.Dev"
+  description="All of my current blog posts"
+  canonical="https://boian.dev/blog"
+  openGraph={{
+    url: 'https://boian.dev/',
+    title: 'Blog page | Boian.dev',
+    description: 'All of my current blog posts',
+    images: [
+      {
+        url: 'https://boian.dev/first.jpg',
+        width: 200,
+        height: 224,
+        alt: 'MeMoji Version of me'
+      }
+    ],
+    siteName: 'Boian.Dev'
+  }}
+/>
 
 <main class="flex flex-col">
 	<section id="hero">

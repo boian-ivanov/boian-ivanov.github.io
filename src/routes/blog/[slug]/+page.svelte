@@ -1,18 +1,35 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import Badge from '$lib/components/ui/badge/badge.svelte';
 	import Button from '$lib/components/ui/button/button.svelte';
 	import Separator from '$lib/components/ui/separator/separator.svelte';
 	import { formatDate } from '$lib/utils';
+	import { MetaTags } from 'svelte-meta-tags';
 
 	export let data;
+
+	/** @type {import('svelte-meta-tags').MetaTagsProps}*/
+	const metaTagsProps = {
+		title: data.meta.title,
+		titleTemplate: '%s | Boian.Dev',
+		description: data.meta.description,
+		openGraph: {
+			title: data.meta.title,
+			description: data.meta.description,
+			type: 'article',
+			url: $page.url.href,
+			images: [
+				{
+					url: `${$page.url.origin}${data.meta.image}`,
+					alt: 'MeMoji Version of me'
+				}
+			]
+		},
+		canonical: $page.url.href
+	};
 </script>
 
-<!-- SEO -->
-<svelte:head>
-	<title>{data.meta.title}</title>
-	<meta property="og:type" content="article" />
-	<meta property="og:title" content={data.meta.title} />
-</svelte:head>
+<MetaTags {...metaTagsProps} />
 
 <div class="-mt-10">
 	<Button
@@ -59,7 +76,7 @@
 
 	<!-- Post -->
 	<div
-		class="prose-white prose-video prose-ol:my2 prose dark:prose-invert prose-h1:my-1 prose-h2:my-1 prose-h3:my-1 prose-p:my-0 prose-a:my-3 prose-blockquote:my-3 prose-figcaption:my-3 prose-pre:my-3 prose-ul:my-3 prose-table:border-b last:prose-table:border-b prose-thead:border prose-thead:bg-zinc-100 prose-th:border prose-td:border-x prose-td:text-center prose-img:mx-auto prose-img:my-3 prose-img:text-center prose-hr:my-3 text-white"
+		class="prose-video prose-ol:my2 prose prose-white dark:prose-invert prose-h1:my-1 prose-h2:my-1 prose-h3:my-1 prose-p:my-0 prose-a:my-3 prose-blockquote:my-3 prose-figcaption:my-3 prose-pre:my-3 prose-ul:my-3 prose-table:border-b last:prose-table:border-b prose-thead:border prose-thead:bg-zinc-100 prose-th:border prose-td:border-x prose-td:text-center prose-img:mx-auto prose-img:my-3 prose-img:text-center prose-hr:my-3"
 	>
 		<svelte:component this={data.content} />
 	</div>

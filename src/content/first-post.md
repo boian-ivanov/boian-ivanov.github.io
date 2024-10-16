@@ -2,6 +2,7 @@
 title: Making a captivating personal homepage, the good, the bad & the ugly (mostly ugly)
 description: My first post and pain points with setting up this project.
 date: '2024-10-16'
+image: '/first-post/new-idea.jpeg'
 categories:
 	- javascript
   - webdev

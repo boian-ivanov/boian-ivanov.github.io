@@ -2,7 +2,7 @@
 	import Particles from '$lib/components/Particles.svelte';
 </script>
 
-<Particles className="absolute inset-0" refresh={true} />
+<Particles className="absolute inset-0 overflow-x-hidden" refresh={true} />
 
 <div class="bg-black">
 	<div
